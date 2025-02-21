@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const backendUrl = "https://sdsensor-hainetsukaishu-demo1-backe.onrender.com";
+const backendUrl = "https://sdsensor-hainetsukaishu-demo3-backend.onrender.com";
 
 const App = () => {
   const [realTimeData, setRealTimeData] = useState(null);
