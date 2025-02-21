@@ -23,12 +23,13 @@ app.use(express.json());
 // 固定デバイス ID
 const DEVICE_ID = "hainetsukaishu-demo3";
 
-// 単価（円/kWh）
+// ✅ **単価（円/kWh）**
 const unitCosts = {
   electricity: 30, // 電気代
-  gas: 20,        // ガス代
-  kerosene: 15,   // 灯油代
-  heavy_oil: 10,  // 重油代
+  gas: 20,         // ガス代
+  kerosene: 15,    // 灯油代
+  heavy_oil: 10,   // 重油代
+  gas_13A: 25      // ✅ 13Aガスの追加
 };
 
 // 熱量計算関数
@@ -46,6 +47,7 @@ function calculateCost(energy_kJ) {
     gas: (kWh * unitCosts.gas).toFixed(2),
     kerosene: (kWh * unitCosts.kerosene).toFixed(2),
     heavy_oil: (kWh * unitCosts.heavy_oil).toFixed(2),
+    gas_13A: (kWh * unitCosts.gas_13A).toFixed(2), // ✅ 13Aガスの計算を追加
   };
 }
 
